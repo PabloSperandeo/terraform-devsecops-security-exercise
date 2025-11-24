@@ -19,7 +19,6 @@ Esta atividade tem como objetivo exercitar a análise de riscos em **Terraform**
 * Um aluno compartilha a tela
 * Um lê o código
 * Todos analisam riscos em conjunto
-* Tempo: **10 minutos**
 
 ---
 
@@ -57,7 +56,7 @@ Discutam:
 
 De volta à sala principal:
 
-* Cada grupo apresenta por o seu cenárioÇ
+* Cada grupo apresenta o que foi identificado:
 
   * Qual foi o risco mais crítico que encontraram?
   * Qual seria o impacto real em produção?
