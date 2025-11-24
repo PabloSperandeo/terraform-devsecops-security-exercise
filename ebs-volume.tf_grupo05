@@ -1,0 +1,24 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "6.0.0-beta2"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+  region = "sa-east-1"
+  shared_credentials_files = ["/home/amaurybs/.aws/credentials"]
+  profile                  = "default"
+}
+
+resource "aws_ebs_volume" "example" {
+  availability_zone = "us-west-2a"
+  size              = 40
+
+  tags = {
+    Name = "HelloWorld"
+  }
+}

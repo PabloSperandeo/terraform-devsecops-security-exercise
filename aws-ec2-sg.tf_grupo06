@@ -1,0 +1,36 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "6.0.0-beta2"
+    }
+  }
+}
+
+provider "aws" {
+  # Configuration options
+  region = "sa-east-1"
+  shared_credentials_files = ["/home/amaurybs/.aws/credentials"]
+  profile                  = "default"
+}
+
+resource "aws_security_group" "insecure_sg" {
+  name        = "insecure-sg"
+  description = "Insecure SG exposing SSH and HTTP to the world"
+
+  ingress {
+    description = "SSH from anywhere"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    description = "HTTP from anywhere"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
